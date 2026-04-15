@@ -1,23 +1,27 @@
-var progress = document.querySelector("#progress");
-var percent = document.querySelector("#percent");
-var btn = document.querySelector("button");
-
 var count = 0;
-
+var running = false;
 
 btn.addEventListener("click", function () {
 
+  if (running) return;
+
+  running = true;
+  count = 0;
+
   var stop = setInterval(function(){
-    count++
-    percent.innerHTML = count + "%"
-    progress.style.width = count + "%"
+
+    if(count < 100){
+      count++
+      percent.innerHTML = count + "%"
+      progress.style.width = count + "%"
+    } else {
+      clearInterval(stop)
+      running = false
+
+      btn.innerHTML = "Downloaded"
+      btn.style.opacity = 0.5
+    }
+
   },50)
-
-  setTimeout(function(){
-    clearInterval(stop)
-    btn.innerHTML = "Downloaded"
-    btn.style.opacity = 0.5
-  },5000)
-
 
 });
