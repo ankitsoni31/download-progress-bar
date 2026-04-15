@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Progress</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="h-screen flex items-center justify-center bg-gray-900">
+
+    <div class="bg-white px-5 py-7 rounded w-120 shadow-lg">
+
+        <!-- Progress Bar -->
+        <div class="w-full bg-gray-300 rounded-full h-5 overflow-hidden">
+            <div id="progress" class="bg-green-500 h-5 w-0"></div>
+        </div>
+
+        <!-- Percentage -->
+        <div class="flex justify-end mt-1">
+            <h5 id="percent">0%</h5>
+        </div>
+
+        <!-- File + Button -->
+        <div class="mt-4 flex justify-between items-center">
+            <h3>Song.mp3</h3>
+            <button id="btn" class="bg-blue-500 text-white px-3 py-1 rounded active:scale-95">
+                Download File
+            </button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
